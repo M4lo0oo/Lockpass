@@ -1,8 +1,8 @@
 Lockpass is a Password Generator and Checker
 -
 
-You have 2 commands :
---password -g //Generate a Password
+You have 2 commands : \
+--password -g //Generate a Password \
 --password -c //Check if a password is secure
 
 
