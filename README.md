@@ -14,3 +14,8 @@ You have 2 commands :
 ![image](https://github.com/user-attachments/assets/3d957794-f4a6-494f-b134-93dba4debb93)
 
 
+
+Please contact m4lo0oo. on Discord
+if you encounter a problem or have any recommendations for me.
+Thanks !
+
