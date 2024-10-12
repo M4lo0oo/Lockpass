@@ -16,10 +16,7 @@ You have 2 commands :
 
 
 Please contact m4lo0oo. on Discord
---------------------------------------
-Or
---------------------------------------
-Join my discord server : oighuzsoigh
 if you encounter a problem or have any recommendations for me.
 Thanks !
+-
 
