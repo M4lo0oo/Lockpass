@@ -40,8 +40,7 @@ def is_password_secure(password):
     return True
 
 def display_menu():
-    os.system('cls' if os.name == 'nt' else 'clear')  # Nettoyer l'écran
-    # ASCII Art d'un cadenas coloré
+    os.system('cls' if os.name == 'nt' else 'clear')
     cadenas_art = [
         "    ██████    ",
         "  ██      ██  ",
