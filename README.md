@@ -1,18 +1,24 @@
 Lockpass is a Password Generator and Checker
 -
 
-Download
+You have 2 commands : \
+--password -g   //Generate a Password \
+--password -c   //Check if a password is secure
+
+Setup
 -
-You can download Zip File 
+```bash
+git clone https://github.com/M4lo0oo/Lockpass
+cd lockpass
+```
+After Start Project :
+```bash
+python main.py
+```
+
 Or
 -
-Write : git clone https://github.com/M4lo0oo/Lockpass/
-After Write : cd lockpass
-
-You have 2 commands : \
---password -g //Generate a Password \
---password -c //Check if a password is secure
-
+Download Zip File
 
 ![image](https://github.com/user-attachments/assets/85c6c0e5-b4b3-429b-b103-8e82d36515de)
 
