@@ -26,7 +26,7 @@ Download Zip File
 -
 ![image](https://github.com/user-attachments/assets/4546574d-f763-4fb5-a5da-f3f955dd675f)
 
---password -c : Check if your password is secure
+--password -c : //Check if your password is secure
 -
 ![image](https://github.com/user-attachments/assets/3d957794-f4a6-494f-b134-93dba4debb93)
 
