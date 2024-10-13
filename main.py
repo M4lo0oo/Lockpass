@@ -2,29 +2,34 @@ import random
 import string
 import os
 import colorama
-from colorama import Fore, Back, Style
+from colorama import Fore, Style
 
 colorama.init(autoreset=True)
 
 def generate_password(length, use_special_chars, use_uppercase, use_lowercase, use_digits, personal_info):
     characters = ''
+    password = []
     
     if use_lowercase:
         characters += string.ascii_lowercase
+        password.append(random.choice(string.ascii_lowercase))
     if use_uppercase:
         characters += string.ascii_uppercase
+        password.append(random.choice(string.ascii_uppercase)) 
     if use_digits:
         characters += string.digits
+        password.append(random.choice(string.digits))
     if use_special_chars:
         characters += string.punctuation
-    
-    password = ''.join(random.choice(characters) for i in range(length - len(personal_info)))
-    password += personal_info
-    
-    password_list = list(password)
-    random.shuffle(password_list)
-    
-    return ''.join(password_list)
+        password.append(random.choice(string.punctuation))
+
+    if len(password) < length - len(personal_info):
+        password += [random.choice(characters) for _ in range(length - len(personal_info) - len(password))]
+
+    password += list(personal_info)
+    random.shuffle(password)
+
+    return ''.join(password)
 
 def is_password_secure(password):
     if len(password) < 8:
@@ -41,6 +46,7 @@ def is_password_secure(password):
 
 def display_menu():
     os.system('cls' if os.name == 'nt' else 'clear')
+    
     cadenas_art = [
         "    ██████    ",
         "  ██      ██  ",
@@ -57,7 +63,6 @@ def display_menu():
         print(Fore.YELLOW + line)
 
     print(Style.RESET_ALL)
-
     print("Commands:")
     print("  --password -g : Generate a password")
     print("  --password -c : Check if a password is secure")
@@ -76,8 +81,10 @@ def password_generation():
     first_name = input("What is your first name? ")
     last_name = input("What is your last name? ")
     favorite_singer = input("Who is your favorite singer? ")
+    birth_date = input("Enter your birth date (DD/MM/YY): ")
+    random_word = input("Enter any random word you choose: ")
     
-    personal_info = (first_name[:2] + last_name[:2] + favorite_singer[:2]).lower()
+    personal_info = (first_name[:2] + last_name[:2] + favorite_singer[:2] + birth_date.replace('/', '')[:2] + random_word[:2]).lower()
     
     password = generate_password(length, use_special_chars, use_uppercase, use_lowercase, use_digits, personal_info)
     
@@ -96,13 +103,14 @@ def main():
         command = input("Enter command to start (e.g., --password -g): ")
         
         if command == '--password -g':
-            password_generation()  
+            password_generation()
             input("\nPress Enter to return to the main menu...")
         elif command == '--password -c':
             check_password()
             input("\nPress Enter to return to the main menu...")
         else:
             print("Invalid command. Please enter '--password -g' or '--password -c'.")
+            input("Press Enter to return to the main menu...")
 
 if __name__ == "__main__":
     main()
